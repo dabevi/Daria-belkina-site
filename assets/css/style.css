@@ -1,0 +1,466 @@
+/* Daria Belkina — portfolio design system
+   Source: design manifesto (brief) — single typeface, no decoration,
+   generous whitespace, image-first. */
+
+@font-face {
+  font-family: "Carlito";
+  src: url("../fonts/Carlito-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("../fonts/Carlito-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-text: #1a1a1a;
+  --color-secondary: #7a7a7a;
+  --color-bg: #ffffff;
+
+  --font-body: "Carlito", Calibri, "Segoe UI", sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+  --space-5: 8rem;
+
+  --measure: 38rem; /* comfortable reading width for expositions */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Service labels: nav, eyebrows, captions — small caps + letter-spacing */
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-3) 0;
+}
+
+.site-header--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.site-logo {
+  display: inline-block;
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.site-logo-sub {
+  margin-top: 0.25rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+}
+
+.site-nav a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.lang-switch a {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Works dropdown (medium filter) */
+.nav-item {
+  position: relative;
+}
+
+.nav-item .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: calc(var(--space-1) + var(--space-2)) var(--space-2) var(--space-2);
+  flex-direction: column;
+  gap: var(--space-2);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  white-space: nowrap;
+}
+
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+}
+
+/* ---------- Hero (Works landing) ---------- */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(80vh, 840px);
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+}
+
+.hero-media--static {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media--motion {
+    display: none;
+  }
+  .hero-media--static {
+    display: block;
+  }
+}
+
+/* ---------- Works grid ---------- */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4) var(--space-3);
+  padding: var(--space-4) var(--space-3);
+}
+
+.work-card {
+  display: block;
+}
+
+.work-card img {
+  width: 100%;
+  height: auto;
+}
+
+.work-card-title {
+  margin-top: var(--space-2);
+  font-weight: 700;
+}
+
+.work-card-year {
+  color: var(--color-secondary);
+  font-weight: 400;
+}
+
+.work-card-medium {
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+}
+
+.works-section-label {
+  padding: 0 var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* ---------- Work / project page ---------- */
+
+.work-page {
+  padding: var(--space-4) var(--space-3);
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.work-title-block {
+  margin-bottom: var(--space-4);
+  max-width: var(--measure);
+}
+
+.work-title-block h1 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 0 0 var(--space-1);
+}
+
+.work-meta {
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.work-media {
+  margin-bottom: var(--space-2);
+}
+
+/* Use on low-resolution source images (e.g. renders) to avoid displaying them oversized */
+.work-media--narrow img {
+  max-width: 50%;
+}
+
+.work-media--medium img {
+  max-width: 70%;
+}
+
+.work-caption {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.work-details-label {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+/* Match gallery images of the same work to a shared height, uncropped — width follows each image's own ratio */
+.work-gallery--uniform {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.work-gallery--uniform img {
+  height: 34rem;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Use with --uniform for wider/landscape image pairs, so two still fit on one row */
+.work-gallery--uniform-short img {
+  height: 20rem;
+}
+
+/* Small, fixed 3-across row — for sellable print series shown at reduced size */
+.work-gallery--compact {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 34rem;
+  gap: var(--space-1);
+}
+
+/* Geological Seconds layout: two visualisations stacked left, material trial matching their combined height on the right, uncropped */
+.geological-layout {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  grid-template-rows: 10rem 10rem;
+  gap: var(--space-1);
+  margin-bottom: var(--space-1);
+}
+
+.geological-layout img {
+  display: block;
+}
+
+.geological-layout .viz-1 {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.geological-layout .viz-2 {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.geological-layout .material-trial {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Collapsible "read more" (native <details>) */
+details.work-text-full {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+details.work-text-full summary {
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  list-style: none;
+}
+
+details.work-text-full summary::-webkit-details-marker {
+  display: none;
+}
+
+details.work-text-full summary:hover {
+  color: var(--color-text);
+}
+
+details.work-text-full[open] summary {
+  margin-bottom: var(--space-2);
+}
+
+details.work-text-full .work-text {
+  margin-top: var(--space-2);
+}
+
+.work-subsection {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+}
+
+.video-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+.work-text {
+  max-width: var(--measure);
+  text-align: left;
+}
+
+.work-text p {
+  margin: 0 0 var(--space-2);
+}
+
+.work-text-full {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+/* ---------- About / CV / Contact ---------- */
+
+.page {
+  padding: var(--space-4) var(--space-3);
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.page h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.cv-section {
+  margin-top: var(--space-3);
+}
+
+.cv-section h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  font-weight: 400;
+}
+
+.cv-entry {
+  margin: 0 0 var(--space-1);
+}
+
+.cv-year {
+  color: var(--color-secondary);
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 2px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+}
+
+.site-footer a {
+  color: var(--color-secondary);
+}
