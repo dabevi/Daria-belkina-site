@@ -164,7 +164,7 @@ a:hover {
 .hero {
   position: relative;
   width: 100%;
-  height: min(80vh, 840px);
+  height: min(70vh, 680px);
   min-height: 400px;
   overflow: hidden;
 }
@@ -197,9 +197,11 @@ a:hover {
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-4) var(--space-3);
   padding: var(--space-4) var(--space-3);
+  max-width: 100rem;
+  margin: 0 auto;
 }
 
 .work-card {
@@ -451,6 +453,54 @@ details.work-text-full .work-text {
   letter-spacing: 0.15em;
   border-bottom: 1px solid var(--color-text);
   padding-bottom: 2px;
+}
+
+.contact-form {
+  margin-top: var(--space-3);
+  max-width: var(--measure);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: var(--space-2);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-secondary);
+  padding: var(--space-1) 0;
+  outline: none;
+  margin-top: var(--space-1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: var(--space-3);
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 2px;
+  color: var(--color-text);
 }
 
 /* ---------- Footer ---------- */
