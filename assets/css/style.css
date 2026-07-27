@@ -464,3 +464,73 @@ details.work-text-full .work-text {
 .site-footer a {
   color: var(--color-secondary);
 }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  :root {
+    --space-3: 1.25rem;
+    --space-4: 2.5rem;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    row-gap: var(--space-1);
+    gap: var(--space-2);
+  }
+
+  .hero {
+    height: min(60vh, 560px);
+    min-height: 320px;
+  }
+
+  .work-gallery--uniform {
+    flex-direction: column;
+  }
+
+  .work-gallery--uniform img {
+    height: auto;
+    width: 100%;
+  }
+
+  .geological-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .geological-layout .viz-1,
+  .geological-layout .viz-2,
+  .geological-layout .material-trial {
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .geological-layout .viz-1 {
+    grid-row: 1;
+  }
+
+  .geological-layout .viz-2 {
+    grid-row: 2;
+  }
+
+  .geological-layout .material-trial {
+    grid-row: 3;
+  }
+
+  .work-gallery--compact {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-gallery--compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
