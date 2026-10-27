@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <title>Elsewhere Gallery — Daria Belkina</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="icon" href="/assets/images/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/images/favicon/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png" />
+  <style>
+    /* Standalone process page for Elsewhere Gallery: the work, how it was
+       made, the story and the artist on one page, no site chrome. */
+    body {
+      padding: var(--space-3) var(--space-2);
+    }
+
+    .process-page {
+      width: 100%;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    .process-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .process-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .process-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: var(--space-2) 0 var(--space-1);
+    }
+
+    .process-meta {
+      color: var(--color-secondary);
+      font-size: 0.875rem;
+      margin: 0 0 var(--space-3);
+    }
+
+    .process-intro {
+      margin: 0 0 var(--space-3);
+    }
+
+    .process-section {
+      margin: 0 0 var(--space-3);
+    }
+
+    .process-section h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 0 var(--space-1);
+    }
+
+    .process-lede {
+      max-width: var(--measure);
+      margin: 0 0 var(--space-2);
+      color: var(--color-secondary);
+      font-size: 0.875rem;
+    }
+
+    .process-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-1);
+      margin: 0 0 var(--space-1);
+    }
+
+    .process-pair figure { margin: 0; }
+
+    .process-pair img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .process-pair figcaption {
+      font-size: 0.8125rem;
+      margin-top: 0.4rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+      gap: var(--space-1);
+    }
+
+    .process-steps figure,
+    .process-loop figure {
+      margin: 0;
+    }
+
+    .process-steps img,
+    .process-loop img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .process-steps figcaption {
+      font-size: 0.8125rem;
+      margin-top: 0.4rem;
+    }
+
+    .process-loop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.35rem;
+    }
+
+    .process-text {
+      max-width: var(--measure);
+    }
+
+    .process-specs {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .process-foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid #e6e6e6;
+      padding-top: var(--space-2);
+    }
+
+    .process-foot a {
+      border-bottom: 1px solid currentColor;
+    }
+
+    @media (max-width: 40rem) {
+      .process-loop { grid-template-columns: repeat(4, 1fr); }
+      .process-pair { grid-template-columns: 1fr; }
+      .process-title { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="process-page">
+    <div class="process-frame">
+      <iframe
+        src="https://player.vimeo.com/video/1221578251?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1&amp;loop=1&amp;playsinline=1&amp;autoplay=1&amp;muted=1"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Elsewhere Gallery, single-channel video loop by Daria Belkina"></iframe>
+    </div>
+
+    <h1 class="process-title">Elsewhere Gallery, 2025</h1>
+    <p class="process-meta">Daria Belkina · single-channel video (loop), 1:00 · Kling, Sora, Photoshop, Premiere Pro</p>
+
+    <div class="process-intro process-text">
+      <p>Elsewhere Gallery turns the exhibition space into a threshold. The camera moves through the paintings into the rooms behind them, and three rooms close into a loop with no entrance and no exit. Shown inside a gallery, the work becomes a double mirror: the viewer watches an image of a gallery while standing in one, and becomes part of it.</p>
+      <p>The continuous, cyclic movement the loop depends on was something the generative models could not produce. It was reached through recursive generation: frames from one segment were used to correct the next, and the model was, in effect, tricked into joining the passages without a seam.</p>
+    </div>
+
+    <section class="process-section">
+      <h2>One passage, before and after</h2>
+      <p class="process-lede">Generated on their own, the passages broke at every painting and the loop would not close. The three passages took twelve cycles of generation and correction: key frames were corrected in Photoshop and the movement was generated again from them. Images from the Human Creator Ledger, the production record made for The Wrong Biennale 7.</p>
+      <div class="process-pair">
+        <figure>
+          <img src="/assets/images/works/elsewhere-gallery/process/ledger-1-failed.jpg" alt="Raw generation with a random image inside the framed painting" loading="lazy" />
+          <figcaption>Raw generation: the model put a random image into the painting.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/works/elsewhere-gallery/process/ledger-2-corrected.jpg" alt="Key frame corrected in Photoshop" loading="lazy" />
+          <figcaption>Key frame corrected in Photoshop: the random image is replaced with a frame from the next segment, generated in advance, and the passage is generated again from it.</figcaption>
+        </figure>
+      </div>
+      <div class="process-steps">
+        <figure>
+          <img src="/assets/images/works/elsewhere-gallery/process/ledger-5-final.jpg" alt="The camera reaches the corrected painting" loading="lazy" />
+          <figcaption>In the finished loop the camera reaches the corrected painting&hellip;</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/works/elsewhere-gallery/process/ledger-3-intermediate-1.jpg" alt="The camera inside the next room" loading="lazy" />
+          <figcaption>&hellip;and passes into the room inside it.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/works/elsewhere-gallery/process/ledger-4-intermediate-2.jpg" alt="The last room opening back into the first" loading="lazy" />
+          <figcaption>The last room opens back into the first.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="process-section process-text">
+      <h2>The story</h2>
+      <p>Elsewhere Gallery began with a simple image: a gallery in which the paintings are doors rather than things to look at. The camera walks down a corridor, comes up to a painting and goes through it into another room, then another. I wanted the passage never to end: three rooms, each opening into the next and the last opening back into the first, a loop with no entrance and no exit.</p>
+      <p>The tools I made it with could not do the one thing the work needed. Kling and Sora generate a few seconds of camera movement well, but they do not hold a sequence together. When the camera reached the painting, the model replaced what was in the frame with something random, and the next room no longer matched the last. Every transition broke in the same place, at the threshold.</p>
+      <p>So the loop is built from seams closed by hand. It took twelve cycles of generation and correction. In each one I generated the movement, took its first and last frames into Photoshop, painted back the image that had to be there, painted out the extra detail the models kept adding, and generated the movement again from the corrected frames, until the end of one room was exactly the beginning of the next.</p>
+      <p>Not every break was a mistake. The emptiness of the rooms, the pink carpet and the soft, diffused light came from the model, and I kept them, because they made the space more of a threshold than I had imagined. Where an unexpected image appeared inside a painting without breaking the passage, I sometimes let it stay. Those are the only seams I chose to leave visible.</p>
+      <p>The viewer sees one minute of uninterrupted movement. The work behind it is every place where that movement stopped.</p>
+    </section>
+
+    <section class="process-section">
+      <h2>The loop</h2>
+      <p class="process-lede">A frame every five seconds. Three rooms; the last opens into the first.</p>
+      <div class="process-loop">
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-01.jpg" alt="Frame at 0:02" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-02.jpg" alt="Frame at 0:07" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-03.jpg" alt="Frame at 0:12" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-04.jpg" alt="Frame at 0:17" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-05.jpg" alt="Frame at 0:22" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-06.jpg" alt="Frame at 0:27" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-07.jpg" alt="Frame at 0:32" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-08.jpg" alt="Frame at 0:37" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-09.jpg" alt="Frame at 0:42" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-10.jpg" alt="Frame at 0:47" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-11.jpg" alt="Frame at 0:52" loading="lazy" /></figure>
+        <figure><img src="/assets/images/works/elsewhere-gallery/process/loop-12.jpg" alt="Frame at 0:57" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <h2>The work</h2>
+      <p class="process-specs">
+        Elsewhere Gallery, 2025<br />
+        Single-channel video, loop, 1:00<br />
+        1920 × 1080, 25 fps, colour, stereo sound (generated), no dialogue<br />
+        Tools: Kling and Sora (generative video), Adobe Photoshop (keyframe correction), Adobe Premiere Pro (editing)<br />
+        Display: screen or projection with stereo sound, continuous loop<br />
+        Edition of 5 + 2 AP
+      </p>
+    </section>
+
+    <section class="process-section process-text">
+      <h2>The artist</h2>
+      <p>Daria Belkina is an artist based in Portugal, working with textile, video and digital media. Her video Elsewhere Gallery received a Special Mention for the Quality of Research at CREA Open 2026 (Cantieri del Contemporaneo, Venice) and was shown at The Wrong Biennale 7 (Negotiated Intelligence pavilion) and at #nfcdab 2026, Rietveld Pavilion, Amsterdam. Her work has also been exhibited at Form, CICA Museum (South Korea), and Beauty, Archived, Palazzo da Mula (Venice). Before turning to contemporary art in 2025, she spent more than a decade as a digital illustrator, and she graduated in Information Systems and Technologies in the Media Industry from Siberian Federal University (2019). Her practice deals with human presence within the attention economy and, more broadly, within any environment structured and governed by people: the ambivalence between live presence and its disappearance into a trace, a version, an absent form.</p>
+    </section>
+
+    <div class="process-foot">
+      <span class="label">Daria Belkina · contemporary artist</span>
+      <a class="label" href="/en/index.html">dariabelkina.art</a>
+    </div>
+  </main>
+</body>
+</html>
